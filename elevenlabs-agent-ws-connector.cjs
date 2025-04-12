@@ -384,7 +384,7 @@ app.ws('/socket', async (ws, req) => {
     
     ws11LabsOpen = false; // stop sending audio payload to 11L platform
 
-    console.log('>>> ElevenLabs WebSocket closed')
+    console.log('\n>>> ElevenLabs WebSocket closed')
   
   });
 
