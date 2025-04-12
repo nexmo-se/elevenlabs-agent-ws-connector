@@ -85,7 +85,7 @@ Set up the sample peer Voice API application per the instructions in its [reposi
 
 For **inbound calling**, call in to the phone number as set up in that [sample peer Voice API application](https://github.com/nexmo-se/voice-to-ai-engines) to interact with the ElevenLabs Speech-to-Speech Conversational AI Agent.
 
-Or using the instructions in the [sample peer Voice API application](https://github.com/nexmo-se/voice-to-ai-engines), you may trigger **outbound calling** to interact with the ElevenLabs Speech-to-Speech Conversational AI Agent.
+Or using the instructions in that [sample peer Voice API application](https://github.com/nexmo-se/voice-to-ai-engines), you may trigger **outbound calling** to interact with the ElevenLabs Speech-to-Speech Conversational AI Agent.
 
 #### Your existing Voice API application
 
