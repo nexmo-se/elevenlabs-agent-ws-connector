@@ -17,7 +17,7 @@ This connector makes use of the [WebSockets feature](https://developer.vonage.co
 
 When a voice call is established, the peer Voice API application triggers a WebSocket connection to this Connector application then streams audio in both directions between the voice call and ElevenLabs Conversational AI. 
 
-You may deploy this [sample Voice API application](https://github.com/nexmo-se/voice-to-ai-engines) to use this Connector code to bi-directionally stream audio between voice calls and ElevenLabs' Speech-to-Speech Conversational AI Agents with LLMs.
+You may deploy this [sample Voice API application](https://github.com/nexmo-se/voice-to-ai-engines) or update your own existing Voice API application to use this Connector code to bi-directionally stream audio between voice calls and ElevenLabs' Speech-to-Speech Conversational AI Agents with LLMs.
 
 ## Set up
 
@@ -46,7 +46,7 @@ Set up two domains, one to forward to the local port 6000 (as this Connector app
 Start ngrok to start both tunnels that forward to local ports 6000 and 8000,</br>
 please take note of the ngrok **Enpoint URL** that forwards to local port 6000 as it will be needed when setting the [Voice API application](https://github.com/nexmo-se/voice-to-ai-engines),
 that URL looks like:</br>
-`xxxxxxxx.ngrok.xxx` (for ngrok), `myserver.mycompany.com:32000`  (as **`PROCESSOR_SERVER`** in the .env file of the [Voice API application](https://github.com/nexmo-se/voice-to-ai-engines)),</br>
+`xxxxxxxx.ngrok.xxx` (for ngrok), `myserver.mycompany.com:<port>`  (as **`PROCESSOR_SERVER`** in the .env file of the [Voice API application](https://github.com/nexmo-se/voice-to-ai-engines)),</br>
 no `port` is necessary with ngrok as public host name,</br>
 that host name to specify must not have leading protocol text such as https://, wss://, nor trailing /.
 
@@ -55,8 +55,8 @@ Copy the `.env.example` file over to a new file called `.env`:
 cp .env.example .env 
 ```
 
-Edit .env file,<br>
-update the arguments of the following parameters as needed per your use case:</br>
+Edit the .env file,<br>
+update the arguments of the following parameters per your ElevenLabs account and AI agent:</br>
 **`ELEVENLABS_API_KEY`**</br>
 **`ELEVENLABS_AGENT_ID`**</br>
 
@@ -65,7 +65,7 @@ You may update the argument of the parameter:</br>
 
 #### Node.js - This Connector application
 
-Have Node.js installed on your system, this application has been tested with Node.js version 18.19<br>
+Have Node.js installed on your system, this application has been tested with Node.js version 18.19.<br>
 
 Install node modules with the command:<br>
  ```bash
@@ -83,13 +83,19 @@ Default local (not public!) of this Connector server application server `port` i
 
 Set up the sample peer Voice API application per the instructions in its [repository](https://github.com/nexmo-se/voice-to-ai-engines).
 
-Call in to the phone number as set up in that application to interact with the ElevenLabs Speech-to-Speech Conversational AI Agent.
+For **inbound calling**, call in to the phone number as set up in that Voice API application to interact with the ElevenLabs Speech-to-Speech Conversational AI Agent.
 
-Or using the instructions in the [sample peer Voice API application](https://github.com/nexmo-se/voice-to-ai-engines), you may initiate an outbound call and interact with the ElevenLabs Speech-to-Speech Conversational AI Agent.
+Or using the instructions in the [sample peer Voice API application](https://github.com/nexmo-se/voice-to-ai-engines), you may trigger **outbound calling** to interact with the ElevenLabs Speech-to-Speech Conversational AI Agent.
 
 #### Your existing Voice API application
 
 Instead of using the [sample peer Voice API application](https://github.com/nexmo-se/voice-to-ai-engines), you may instead update and use your existing Voice API application to connect voice calls via [WebSockets](https://developer.vonage.com/en/voice/voice-api/concepts/websockets) to this Connector Application and interact with the ElevenLabs Speech-to-Speech Conversational AI Agent.
+
+You existing Voice API application may be written with any programming language using [server SDKs](https://developer.vonage.com/en/tools) or with direct [REST API] (https://developer.vonage.com/en/api/voice) calls.
+
+#### Video API application
+
+You may have your Vonage Video API WebRTC Clients establish sessions with an ElevenLabs Speech-to-Speech Conversational AI Agent through the [Audio Connector] (https://tokbox.com/developer/guides/audio-connector) and this Connector server.
 
 ### Cloud deployment
 
