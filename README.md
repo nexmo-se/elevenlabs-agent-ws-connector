@@ -2,9 +2,9 @@
 
 You may use this Connector server application to connect voice calls managed by a Vonage Voice API application or a Vonage Video API client to ElevenLabs' Speech-to-Speech Conversational AI Agents.
 
-Voice calls may be</br>
-inbound/outbound</br>
-from/to PSTN (cell phones, landline phones, fixed phones),</br>
+Voice calls may be:</br>
+inbound/outbound,</br>
+PSTN calls (cell phones, landline phones, fixed phones),</br>
 SIP connections/trunks using [Standard SIP trunks](https://developer.vonage.com/en/sip/overview) or [Programmable SIP Trunks](https://developer.vonage.com/en/voice/voice-api/concepts/programmable-sip),</br>
 [Audio WebRTC](https://developer.vonage.com/en/vonage-client-sdk/overview) clients (iOS/Android/JavaScript),</br>
 [Video WebRTC](https://tokbox.com/developer/sdks) clients (iOS/Android/React Native/JavaScript/Windows/macOS/Linux).
