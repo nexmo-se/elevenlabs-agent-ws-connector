@@ -2,13 +2,19 @@
 
 You may use this Connector server application to connect voice calls managed by a Vonage Voice API application or a Vonage Video API client to ElevenLabs' Speech-to-Speech Conversational AI Agents.
 
-Voice calls may be inbound/outbound from/to PSTN (cell phones, landline phones, fixed phones), SIP connections/trunks using [Standard SIP trunks](https://developer.vonage.com/en/sip/overview) or [Programmable SIP Trunks](https://developer.vonage.com/en/voice/voice-api/concepts/programmable-sip), [Audio WebRTC](https://developer.vonage.com/en/vonage-client-sdk/overview) clients (iOS/Android/JavaScript), [Video WebRTC](https://tokbox.com/developer/sdks) clients (iOS/Android/React Native/JavaScript/Windows/macOS/Linux).
+Voice calls may be</br>
+inbound/outbound</br>
+from/to PSTN (cell phones, landline phones, fixed phones),</br>
+SIP connections/trunks using [Standard SIP trunks](https://developer.vonage.com/en/sip/overview) or [Programmable SIP Trunks](https://developer.vonage.com/en/voice/voice-api/concepts/programmable-sip),</br>
+[Audio WebRTC](https://developer.vonage.com/en/vonage-client-sdk/overview) clients (iOS/Android/JavaScript),</br>
+[Video WebRTC](https://tokbox.com/developer/sdks) clients (iOS/Android/React Native/JavaScript/Windows/macOS/Linux).
 
 ## About this Connector code
 
-See the diagram in this repository for an overview of the solution architecture.
+See the diagram _11l-agent-ws-overview-diagram.png_ in this repository for an overview of the solution architecture.
 
 This connector makes use of the [WebSockets feature](https://developer.vonage.com/en/voice/voice-api/concepts/websockets) of Vonage Voice API.</br>
+
 When a voice call is established, the peer Voice API application triggers a WebSocket connection to this Connector application then streams audio in both directions between the voice call and ElevenLabs Conversational AI. 
 
 You may deploy this [sample Voice API application](https://github.com/nexmo-se/voice-to-ai-engines) to use this Connector code to bi-directionally stream audio between voice calls and ElevenLabs' Speech-to-Speech Conversational AI Agents with LLMs.
@@ -49,9 +55,8 @@ Copy the `.env.example` file over to a new file called `.env`:
 cp .env.example .env 
 ```
 
-Update the argument of the parameter **`ELEVENLABS_API_KEY`** in .env file<br>
-
-Update the arguments of the following parameters as needed per your use case:</br>
+Edit .env file,<br>
+update the arguments of the following parameters as needed per your use case:</br>
 **`ELEVENLABS_API_KEY`**</br>
 **`ELEVENLABS_AGENT_ID`**</br>
 
