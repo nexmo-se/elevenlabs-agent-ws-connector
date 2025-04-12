@@ -16,8 +16,6 @@ const axios = require('axios');
 const fsp = require('fs').promises;
 const moment = require('moment');
 
-// const axios = require('axios');
-
 //---- CORS policy - Update this section as needed ----
 
 app.use(function (req, res, next) {
@@ -72,7 +70,6 @@ const streamTimer = setInterval ( () => {
     };
 
 }, timer);
-
 
 //--- Websocket server (for WebSockets from Vonage Voice API platform) ---
 
@@ -292,10 +289,11 @@ app.ws('/socket', async (ws, req) => {
 
     case 'user_transcript':
 
-      axios.post(webhookUrl,  
+      await axios.post(webhookUrl,  
         {
           "type": 'user_transcript',
-          "transcript": data.user_transcription_event.user_transcript
+          "transcript": data.user_transcription_event.user_transcript,
+          "call_uuid": peerUuid
         },
         {
         headers: {
@@ -311,10 +309,11 @@ app.ws('/socket', async (ws, req) => {
 
     case 'agent_response':
 
-      axios.post(webhookUrl,  
+      await axios.post(webhookUrl,  
         {
           "type": 'agent_response',
-          "response": data.agent_response_event.agent_response
+          "response": data.agent_response_event.agent_response,
+          "call_uuid": peerUuid
         },
         {
         headers: {
