@@ -92,9 +92,6 @@ app.ws('/socket', async (ws, req) => {
 
   let wsVgOpen = true; // WebSocket to Vonage ready for binary audio payload?
 
-  // let isDgPartialTranscript = false;
-  // let dgTranscript = ""; 
-
   // let startSpeech = false;
   
   let dropTtsChunks = false;
@@ -170,7 +167,6 @@ app.ws('/socket', async (ws, req) => {
 
   let ws11LabsOpen = false; // WebSocket to ElevenLabs ready for binary audio payload?
 
-  // const elevenLabsWsUrl = "wss://api.elevenlabs.io/v1/text-to-speech/" + elevenLabsVoiceId + "/stream-input?model_id=" + elevenLabsModel + "&language_code=en&output_format=pcm_16000&auto_mode=true&inactivity_timeout=" + elevenLabsInactivityTimer;
   const elevenLabsWsUrl = "wss://api.elevenlabs.io/v1/convai/conversation?agent_id=" + elevenLabsAgentId;
 
   const elevenLabsWs = new webSocket(elevenLabsWsUrl, {
@@ -215,16 +211,6 @@ app.ws('/socket', async (ws, req) => {
     ws.send(JSON.stringify(initMessage));
     
     ws11LabsOpen = true;
-
-    // elevenLabsTimer = setInterval ( () => {
-
-    //   // send keepalive message
-    //   if (ws11LabsOpen) {
-    //     console.log('\n>>>', Date.now(), 'Sending keep alive to ElevenLabs');
-    //     elevenLabsWs.send(JSON.stringify({text: " "}));
-    //   }
-
-    // }, elevenLabsKeepAliveTimer);
 
   });
 
@@ -363,15 +349,6 @@ app.ws('/socket', async (ws, req) => {
       console.log('\n', data); 
 
     }
-
-
-    // if (data.isFinal) {
-    //     // the generation is complete
-    // }
-    
-    // if (data.normalizedAlignment) {
-    //     // use the alignment info if needed
-    // }
 
   });
 
