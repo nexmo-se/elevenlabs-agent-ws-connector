@@ -95,7 +95,7 @@ You existing Voice API application may be written with any programming language 
 
 #### Video API application
 
-You may have your Vonage Video API WebRTC Clients establish sessions with an ElevenLabs Speech-to-Speech Conversational AI Agent through the [Audio Connector] (https://tokbox.com/developer/guides/audio-connector) and this Connector server.
+You may have your Vonage Video API WebRTC Clients establish sessions with an ElevenLabs Speech-to-Speech Conversational AI Agent through the [Audio Connector](https://tokbox.com/developer/guides/audio-connector) and this Connector server.
 
 ### Cloud deployment
 
