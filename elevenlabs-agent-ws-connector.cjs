@@ -11,6 +11,8 @@ require('express-ws')(app);
 
 app.use(bodyParser.json());
 
+const axios = require('axios');
+
 const fsp = require('fs').promises;
 const moment = require('moment');
 
@@ -82,6 +84,10 @@ app.ws('/socket', async (ws, req) => {
   //-----
 
   const peerUuid = req.query.peer_uuid;
+  
+  const webhookUrl = req.query.webhook_url;
+  console.log('>>> webhookUrl:', webhookUrl);
+  
   let elevenLabsTimer;
 
   console.log('>>> WebSocket from Vonage platform')
@@ -283,6 +289,44 @@ app.ws('/socket', async (ws, req) => {
       break;
 
     //---
+
+    case 'user_transcript':
+
+      axios.post(webhookUrl,  
+        {
+          "type": 'user_transcript',
+          "transcript": data.user_transcription_event.user_transcript
+        },
+        {
+        headers: {
+          "Content-Type": 'application/json'
+        }
+      });
+
+      console.log('\n', data);
+
+      break;
+
+    //---   
+
+    case 'agent_response':
+
+      axios.post(webhookUrl,  
+        {
+          "type": 'agent_response',
+          "response": data.agent_response_event.agent_response
+        },
+        {
+        headers: {
+          "Content-Type": 'application/json'
+        }
+      });
+
+      console.log('\n', data);
+
+      break;
+
+    //---  
 
     case 'interruption':
     
