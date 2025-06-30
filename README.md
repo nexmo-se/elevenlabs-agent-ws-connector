@@ -91,7 +91,7 @@ Or using the instructions in that [sample peer Voice API application](https://gi
 
 Instead of using the [sample peer Voice API application](https://github.com/nexmo-se/voice-to-ai-engines), you may instead update and use your existing Voice API application to connect voice calls via [WebSockets](https://developer.vonage.com/en/voice/voice-api/concepts/websockets) to this Connector Application and interact with the ElevenLabs Speech-to-Speech Conversational AI Agent.
 
-Your existing Voice API application may be written with any programming language using [server SDKs](https://developer.vonage.com/en/tools) or with direct [REST API] (https://developer.vonage.com/en/api/voice) calls.
+Your existing Voice API application may be written with any programming language using [server SDKs](https://developer.vonage.com/en/tools) or with direct [REST API](https://developer.vonage.com/en/api/voice) calls.
 
 #### Video API application
 
