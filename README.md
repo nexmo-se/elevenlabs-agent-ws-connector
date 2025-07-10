@@ -31,7 +31,8 @@ take note of it (as it will be needed as **`ELEVENLABS_API_KEY`** in the next se
 Go to Conversational AI / Agents,</br>
 select an existing agent or create a new agent,</br>
 go to ... / Copy Agent ID (as it will be needed as **`ELEVENLABS_AGENT_ID`** in the next section),</br>
-go to the Voice tab, under **TTS output format** select **PCM 16000 Hz**.
+go to the Voice tab, under **TTS output format** select **PCM 16000 Hz**,</br>
+go to the Advanced tab, under **Client Events** make sure to see or add **audio**, **user_transcript**, **agent_response**, and **interruption**.
 
 ### Local deployment
 

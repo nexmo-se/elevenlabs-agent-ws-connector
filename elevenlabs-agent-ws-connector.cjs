@@ -317,7 +317,9 @@ app.ws('/socket', async (ws, req) => {
     
       // barge-in
       payloadToVg = Buffer.alloc(0);  // reset stream buffer to VG
-      streamToVgIndex = 0;  
+      streamToVgIndex = 0;
+
+      console.log('\n', data);
 
       break;
 
